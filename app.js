@@ -12,5 +12,9 @@ mongoose.connect(`mongodb+srv://itsleeparker:${process.env.DB}${process.env.DB_N
 app.route("/api/email")
 	.post(Controller.post);
 
+app.rout("/")
+	.get((req , res)=>{
+		res.send("<h1>Uptricks Solutions</h1>")
+	})
 
 app.listen(PORT  , e=>console.log(`Server running on http://localhost:${PORT}`));
