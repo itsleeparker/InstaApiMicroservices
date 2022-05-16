@@ -12,7 +12,7 @@ mongoose.connect(`mongodb+srv://itsleeparker:${process.env.DB}${process.env.DB_N
 app.route("/api/email")
 	.post(Controller.post);
 
-app.rout("/")
+app.route("/")
 	.get((req , res)=>{
 		res.send("<h1>Uptricks Solutions</h1>")
 	})
