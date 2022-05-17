@@ -12,8 +12,7 @@ mongoose.connect(`mongodb+srv://itsleeparker:${process.env.DB}${process.env.DB_N
 app.route("/api/email")
 	.post(Controller.post);
 
-app.route("/")
-	.get((req , res)=>{
+app.get("/",(req , res)=>{
 		res.sendFile(`${__dirname}/index.html`);
 	})
 
