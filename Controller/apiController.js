@@ -83,7 +83,7 @@ const trigger = ()=>{
 
 const post = (req , res)=>{
 	//get all the queries
-		var info = new DB({
+		const info = new DB({
 		user_id       : req.query.ig_id,
 		media_url     : req.query.url,
 		isCarouesel   : req.query.carousel,

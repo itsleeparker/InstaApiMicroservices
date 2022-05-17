@@ -10,7 +10,8 @@ const dbSchema = new mongoose.Schema({
 	tags 	: Array,
 	access_token  : String,
 	ms 		: Number,
-	date   	: Date 		//Date to be executed on
+	date   	: Date, 		//Date to be executed on,
+	media_id : String
 })
 
 const db = new mongoose.model("Insta_API" , dbSchema);
