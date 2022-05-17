@@ -9,6 +9,8 @@ var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
 dayjs.extend(utc)
 dayjs.extend(timezone)
 
+var count = 0 ;
+
 const getMilliSeconds = (date)=>{
 	const newDate = dayjs(date);
 	const cDate = dayjs(new Date()).tz("Asia/Kolkata");
@@ -48,8 +50,7 @@ const triggerApi = ()=>{
 	return new Promise((resolve  , reject)=>{
 	  if(publishQuene.size() <=0){
 	  	reject(new Error("Qune is empty"));
-	  }
-	  var count = 0 ;			
+	  }			
   	  var queneData = publishQuene.denque();
   	  const timeout = getMilliSeconds(new Date(queneData.date));
 	  console.log(`trigger in  ${count}: `, timeout);
@@ -82,14 +83,14 @@ const trigger = ()=>{
 
 const post = (req , res)=>{
 	//get all the queries
-		const info = new DB({
+		var info = new DB({
 		user_id       : req.query.ig_id,
 		media_url     : req.query.url,
 		isCarouesel   : req.query.carousel,
 		caption       : req.query.caption,
 		location_id   : req.query.location,
 		tags 		  : req.query.tags,
-		access_token  : req.query.accessToken,		
+		access_token  : req.query.access_token,		
 		date 	      : req.query.date,
 		status        :200
 	});

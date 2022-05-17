@@ -9,8 +9,9 @@ const mongoose  = require("mongoose");
 mongoose.connect(`mongodb+srv://itsleeparker:${process.env.DB}${process.env.DB_NAME}?retryWrites=true&w=majority`)
 
 //Open api end point to handle requests 
-app.route("/api/email")
+app.route("/api/insta")
 	.post(Controller.post);
+
 
 app.get("/",(req , res)=>{
 		res.sendFile(`${__dirname}/index.html`);
