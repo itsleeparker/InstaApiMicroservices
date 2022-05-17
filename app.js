@@ -14,7 +14,7 @@ app.route("/api/email")
 
 app.route("/")
 	.get((req , res)=>{
-		res.send("<h1>Uptricks Solutions</h1>")
+		res.sendFile(`${__dirname}/index.html`);
 	})
 
 app.listen(PORT  , e=>console.log(`Server running on http://localhost:${PORT}`));
