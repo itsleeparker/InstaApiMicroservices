@@ -12,12 +12,14 @@ dayjs.extend(timezone)
 
 var count = 0 ;
 
-
+/*----------IMPORTANT FUNCTIONS DO NOT TOUCH------------------*/
 /*------MILLISECONDS CONVERTER FUNCTION HERE-----------*/
 
 const getMilliSeconds = (date)=>{
-	const newDate = dayjs(date).tz("Asia/Kolkata");
+	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
+	const newDate = dayjs(date);			//Update this line of code to be same as cDate when working in local machine
 	const cDate = dayjs(new Date()).tz("Asia/Kolkata");
+	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
 	const diff = newDate.diff(cDate);
@@ -66,6 +68,8 @@ const triggerApi = ()=>{
   	  },timeout);
 	})
 }
+
+/*------------------IMPORTANT------------------*/
 
 /*-------------TRIGGER FUCTION HERE-------------*/
 
