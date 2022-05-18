@@ -1,6 +1,5 @@
 const DB = require("../db").db;
 const SDB = require("../db").sDb;
-const trigger = require("../Controller/apiController").trigger;
 const deleteDb = (queneId)=>{
 	 DB.deleteOne({_id : queneId } , (err , results)=>{
 		if(!err){
