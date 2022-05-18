@@ -107,6 +107,5 @@ const post = (req , res)=>{
 
 
 module.exports = {
-	post : post,
-	trigger : trigger
+	post : post
 }
