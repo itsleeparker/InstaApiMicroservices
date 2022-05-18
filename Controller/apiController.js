@@ -17,9 +17,8 @@ var count = 0 ;
 
 const getMilliSeconds = (date)=>{
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
-	const newDate = dayjs(date)
-	// const cDate = dayjs(new Date()).tz("Asia/Kolkata");	//Uncomment While working on local machine
-	const cDate = dayjs(new Date());		
+	const newDate = dayjs(date).tz("Asia/Kolkata");
+	const cDate = dayjs(new Date()).tz("Asia/Kolkata");		
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
