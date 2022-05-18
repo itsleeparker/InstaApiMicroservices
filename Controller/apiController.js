@@ -22,7 +22,7 @@ const getMilliSeconds = (date)=>{
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
-	const diff = newDate.diff(cDate);
+	const diff = Math.abs(new Date(cdate) - new Date(date));
 	return diff;
 }
 
