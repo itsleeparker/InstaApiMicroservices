@@ -15,9 +15,10 @@ var count = 0 ;
 /*----------IMPORTANT FUNCTIONS DO NOT TOUCH------------------*/
 /*------MILLISECONDS CONVERTER FUNCTION HERE-----------*/
 
-const getMilliSeconds = (newDate)=>{
+const getMilliSeconds = (date)=>{
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
-	const cDate = dayjs(new Date()).tz("Asia/Kolkata");		
+	const cDate = dayjs(new Date()).tz("Asia/Kolkata");
+  	var newDate =   dayjs(new Date(date)).format();		
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
@@ -51,8 +52,7 @@ const triggerApi = ()=>{
 	  	reject(new Error("Qune is empty"));
 	  }			
   	  var queneData = publishQuene.denque();
-  	  var newDate = dayjs(new Date(queneData.date)).tz("Asia/Kolkata");
-  	  const timeout = getMilliSeconds(newDate);
+  	  const timeout = getMilliSeconds(queneData.date);
 	  console.log(`trigger in  ${count}: `, timeout);
   	  setTimeout(()=>{
 
