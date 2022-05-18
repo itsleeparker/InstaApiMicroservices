@@ -16,7 +16,7 @@ var count = 0 ;
 /*------MILLISECONDS CONVERTER FUNCTION HERE-----------*/
 
 const getMilliSeconds = (date)=>{
-	const newDate = dayjs(date);
+	const newDate = dayjs(date).tz("Asia/Kolkata");
 	const cDate = dayjs(new Date()).tz("Asia/Kolkata");
 	console.log("Current time  ", cDate.format());
 	const diff = newDate.diff(cDate);
