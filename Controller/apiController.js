@@ -9,7 +9,7 @@ var utc = require('dayjs/plugin/utc')
 var timezone = require('dayjs/plugin/timezone') // dependent on utc plugin
 dayjs.extend(utc)
 dayjs.extend(timezone)
-
+var herokuTime = process.env.TIME || 0;			//For local and heroku server 
 var count = 0 ;
 
 /*----------IMPORTANT FUNCTIONS DO NOT TOUCH------------------*/
@@ -19,7 +19,7 @@ const getMilliSeconds = (date)=>{
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	const cDate = dayjs().tz("Asia/Kolkata");
   	var newDate =   dayjs(date);		
-  	var timeDiff = (5.5 * 3600000);				//5:30 hours of differnence
+  	var timeDiff = (5.5 * herokuTime);				//5:30 hours of differnence
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
