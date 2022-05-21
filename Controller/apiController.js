@@ -17,12 +17,13 @@ var count = 0 ;
 
 const getMilliSeconds = (date)=>{
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
-	const cDate = dayjs();
+	const cDate = dayjs().tz("Asia/Kolkata");
   	var newDate =   dayjs(date);		
+  	var timeDiff = (5.5 * 3600000);				//5:30 hours of differnence
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
-	const diff = (newDate.diff(cDate));
+	const diff = (newDate.diff(cDate) - timeDiff //Remove Extra 5 hours of server);		//remove The extra 5 hour while on local machine
 	return diff;
 }
 
