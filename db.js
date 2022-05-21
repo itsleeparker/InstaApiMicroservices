@@ -7,7 +7,7 @@ const dbSchema = new mongoose.Schema({
 	caption  : String,
 	access_token  : String,
 	ms 		: Number,
-	date   	: Date, 		//Date to be executed on,
+	date   	: String, 		//Date to be executed on,
 	media_id : String,
 	container_id : String
 })
