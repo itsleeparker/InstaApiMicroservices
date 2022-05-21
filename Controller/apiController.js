@@ -18,7 +18,7 @@ var count = 0 ;
 const getMilliSeconds = (date)=>{
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	const cDate = dayjs(new Date()).tz("Asia/Kolkata");
-  	var newDate =   dayjs(new Date(date));			//Change this line of code when	on local or server	
+  	var newDate =   dayjs(date);			//Change this line of code when	on local or server	
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
@@ -94,7 +94,7 @@ const post = (req , res)=>{
 		location_id   : req.query.location,
 		tags 		  : req.query.tags,
 		access_token  : req.query.access_token,		
-		date 	      : req.query.date,
+		date 	      : dayjs(req.query.date).format(),
 		status        :200
 	});
 
