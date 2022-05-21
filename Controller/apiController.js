@@ -23,7 +23,7 @@ const getMilliSeconds = (date)=>{
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
-	const diff = (newDate.diff(cDate) - timeDiff //Remove Extra 5 hours of server);		//remove The extra 5 hour while on local machine
+	var diff = (newDate.diff(cDate) - timeDiff )//Remove Extra 5 hours of server);		//remove The extra 5 hour while on local machine
 	return diff;
 }
 
