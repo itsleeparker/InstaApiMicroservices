@@ -17,12 +17,14 @@ var count = 0 ;
 
 const getMilliSeconds = (date)=>{
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
-	const cDate = dayjs().tz("Asia/Kolkata");
+	const cDate = dayjs().tz("Asia/Kolkata").format();
   	var newDate =   dayjs(date);			//Change this line of code when	on local or server	
+	var d1 = new Date(cDate);
+	var d2 = new Date(date);
 	/*---ONLY TOUCH IF SWITCHING FROM SERVER TO LOCAL----*/
 	console.log("Current time  ", cDate.format());
 	console.log("Given Time    " , newDate.format());
-	const diff = newDate.diff(cDate);
+	const diff = Math.abs(d2 - d1);
 	return diff;
 }
 
