@@ -17,4 +17,8 @@ app.get("/",(req , res)=>{
 		res.sendFile(`${__dirname}/index.html`);
 	})
 
+app.get("/docs" , (req , res)=>{
+	res.sendFile(`${__dirname}/src/docsHome.html`);
+})
+
 app.listen(PORT  , e=>console.log(`Server running on http://localhost:${PORT}`));
